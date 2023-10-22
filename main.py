@@ -1,6 +1,6 @@
 from actions_dict import actions_dict
 from matrices_dict import matrices_dict
-from checking_for_correctionss import *
+from checking_for_correctionss import matrix_name_checking_for_correctness
 from interface.print_matrices_list import print_matrix
 
 def user_text_for_action_checking_for_correctionss(action, matrices_for_action, new_matrix_name):

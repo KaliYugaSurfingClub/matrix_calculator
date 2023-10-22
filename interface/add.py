@@ -1,5 +1,9 @@
-from checking_for_correctionss import *
 from matrices_dict import matrices_dict
+from checking_for_correctionss import matrix_name_checking_for_correctness
+
+def checking_is_num(string):
+    return string.isdigit() and string != "0"
+
 
 def matrix_inf_checking_for_correctness(inf):
     if len(inf) != 3:
@@ -19,7 +23,6 @@ def matrix_inf_checking_for_correctness(inf):
         return False
     if not checking_is_num(m):
         print("кол-во столбцов - число(не может начинаться с нуля и не может быть дробным или нулем)")
-        return False
      
     return True
 
