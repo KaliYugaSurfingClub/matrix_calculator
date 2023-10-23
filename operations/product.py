@@ -1,3 +1,6 @@
+def matrices_for_product_is_correct(first_matrix, second_matrix):
+    return True
+
 def get_product_of_matrices(first_matrix, second_matrix):
     # Количество строк/колонн первой матрицы
     first_rows = len(first_matrix)

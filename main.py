@@ -1,9 +1,9 @@
 from actions_dict import actions_dict
 from matrices_dict import matrices_dict
-from checking_for_correctionss import matrix_name_checking_for_correctness
+from checking_for_correctionss import matrix_name_is_correct
 from interface.print_matrices_list import print_matrix
 
-def user_text_for_action_checking_for_correctionss(action, matrices_for_action, new_matrix_name):
+def user_text_for_action_is_correct(action, matrices_for_action, new_matrix_name):
     if action not in actions_dict.keys():
         print("нет такой команды")
         return False
@@ -18,7 +18,7 @@ def user_text_for_action_checking_for_correctionss(action, matrices_for_action, 
     
     flag = False
     for name in matrices_for_action:
-        if not matrix_name_checking_for_correctness(name):
+        if not matrix_name_is_correct(name):
             print("имя матрицы - одна латинская буква")
             flag = True
             continue
@@ -38,11 +38,14 @@ def main():
         for action in actions_dict:
             print(actions_dict[action]["about"])
 
-        text = input().split()
-        action = text[0]
+        try:
+            text = input().split()
+            action = text[0]
+        except:
+            continue
 
         if action[:2] == "--":
-            if not user_text_for_action_checking_for_correctionss(action, [], "#"):
+            if not user_text_for_action_is_correct(action, [], "#"):
                 continue
 
             actions_dict[action]["func"]()
@@ -51,11 +54,15 @@ def main():
             new_matrix_name = text[-1]
             names_matrices_for_action = text[1:-1]
 
-            if not user_text_for_action_checking_for_correctionss(action, names_matrices_for_action, new_matrix_name):
+            if not user_text_for_action_is_correct(action, names_matrices_for_action, new_matrix_name):
                 continue
             
             matrices_for_action = [matrices_dict[name] for name in names_matrices_for_action]
+            if not actions_dict[action]["checking_for_correctness_func"](*matrices_for_action):
+                continue
+
             matrices_dict[new_matrix_name] = actions_dict[action]["func"](*matrices_for_action)
             print_matrix(new_matrix_name)
+        print("\n")
 
 main()

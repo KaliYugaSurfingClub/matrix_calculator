@@ -1,3 +1,7 @@
+def matrices_for_sum_is_correct(first_matrix, second_matrix):
+    return True
+
+
 def get_sum_of_matrices(first_matrix, second_matrix):
     matrix_size1 = []
     matrix_size1.append(len(first_matrix[1]))
@@ -13,6 +17,7 @@ def get_sum_of_matrices(first_matrix, second_matrix):
             result[i].append(first_matrix[i][j] + second_matrix[i][j])
     return result
 
+
 def get_difference_of_matrices(first_matrix, second_matrix):
     matrix_size1 = []
     matrix_size1.append(len(first_matrix[1]))
@@ -27,3 +32,4 @@ def get_difference_of_matrices(first_matrix, second_matrix):
         for j in range(matrix_size1[1]):
             result[i].append(first_matrix[i][j] - second_matrix[i][j])
     return result
+
