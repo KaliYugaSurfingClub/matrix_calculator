@@ -1,6 +1,7 @@
 from operations.sum import get_sum_of_matrices, matrices_for_sum_is_correct
 from operations.product import get_product_of_matrices, matrices_for_product_is_correct
 from operations.transposition import get_transposed_matrix
+from interface.del_matrices import del_matrices
 from interface.add import add_matrices
 from interface.print_matrices_list import print_matrices_list
 
@@ -14,7 +15,12 @@ actions_dict = {
         "func": print_matrices_list,
         "arg_count": 0,
         "about": "Если вы хотите вывести все матрицы: --list"
-    }, 
+    },
+    "--del": {
+        "func": del_matrices,
+        "arg_count": 0,
+        "about": "Если вы хотите удалить матрицы: --del"
+    },
     "sum": {
         "func": get_sum_of_matrices,
         "checking_for_correctness_func": matrices_for_sum_is_correct,
