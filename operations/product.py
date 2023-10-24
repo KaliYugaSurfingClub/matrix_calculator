@@ -25,3 +25,6 @@ def get_product_of_matrices(first_matrix, second_matrix):
 
     # Возвращаем результат
     return result
+
+def is_possible_to_product(first_matrix, second_matrix):
+    return len(first_matrix[0]) == len(second_matrix)
