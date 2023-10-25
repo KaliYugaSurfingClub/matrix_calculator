@@ -24,6 +24,7 @@ def matrix_inf_is_correct(inf):
         return False
     if not num_is_correct(m):
         print("кол-во столбцов - число(не может начинаться с нуля и не может быть дробным или нулем)")
+        return False
      
     return True
 
@@ -42,20 +43,6 @@ def row_is_correct(row, length):
 
 
 def add_matrices():
-    # flag = True
-    # while flag:
-    #     count = input("сколько матриц вы хотите добавить?\n")
-
-    #     if count == "":
-    #         return
-
-    #     if not (num_is_correct(count) and int(count) > 0):
-    #         print("кол-во матриц - число")
-    #         continue
-        
-    #     count = int(count)
-    #     break
-
     flag = True
 
     while flag:
