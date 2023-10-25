@@ -28,5 +28,3 @@ def matrix_subtraction(first_matrix, second_matrix):
         for j in range(matrix_size1[1]):
             result[i].append(first_matrix[i][j] - second_matrix[i][j])
     return result
-
-print(matrix_summing([[1,2]],  [[9,10]]))
