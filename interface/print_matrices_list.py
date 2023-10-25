@@ -5,9 +5,13 @@ def print_matrix(name):
     print(f"{name}:")
     for row in matrix:
         print(f"|{" ".join([str(num) for num in row])}|")
-    print("\n")
 
 
 def print_matrices_list():
+    if len(matrices_dict) == 0:
+        print("Вы еще не добавили ни одной матрицы\n")
+        return
+
     for name in matrices_dict:
         print_matrix(name)
+        print("\n")
