@@ -42,17 +42,27 @@ def row_is_correct(row, length):
 
 
 def add_matrices():
+    # flag = True
+    # while flag:
+    #     count = input("сколько матриц вы хотите добавить?\n")
+
+    #     if count == "":
+    #         return
+
+    #     if not (num_is_correct(count) and int(count) > 0):
+    #         print("кол-во матриц - число")
+    #         continue
+        
+    #     count = int(count)
+    #     break
+
     flag = True
+
     while flag:
-        try:
-            count = int(input("сколько матриц вы хотите добавить?\n"))
-            flag = False
-        except:
-            print("кол-во матриц - число")
-            continue
-    
-    while count > 0:
-        inf = input("введите: имя матрицы(одна латинская буква), кол-во строк, кол-во столбцов, через пробел\n").split()
+        inf = input("введите: имя матрицы(одна латинская буква), кол-во строк, кол-во столбцов, через пробел (чтобы выйти из режима добавления - enter)\n").split()
+        if inf == []:
+            return
+
         if not matrix_inf_is_correct(inf):
             continue
         
@@ -72,4 +82,3 @@ def add_matrices():
             index += 1
 
         matrices_dict[name] = matrix
-        count -= 1
