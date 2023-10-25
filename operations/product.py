@@ -26,5 +26,10 @@ def get_product_of_matrices(first_matrix, second_matrix):
     # Возвращаем результат
     return result
 
-def is_possible_to_product(first_matrix, second_matrix):
-    return len(first_matrix[0]) == len(second_matrix)
+
+def matrices_for_product_is_correct(first_matrix, second_matrix):
+    if len(first_matrix[0]) == len(second_matrix):
+        return True
+    else:
+        print("Чтобы выполнить произведение матриц, количество столбцов первой матрицы должно равняться количеству строк второй")
+        return False
